@@ -56,7 +56,10 @@ export class CartService {
   removeItem(id: number) {
     const product = this.items.value.find((item) => item.id === id)!;
     this.items.next(this.items.value.filter((item) => item.id !== id));
-    localforage.setItem('cart', this.items);
+    console.log(
+      
+      localforage.setItem('cart', this.items)
+      );
 
     this.toastr.success(`${product.name} removed from cart`, 'Success', {
       timeOut: 2000,

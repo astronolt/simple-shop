@@ -35,16 +35,7 @@ export class CheckoutComponent {
       ],
     ],
     address: this.fb.group({
-      country: ['', Validators.required],
-      zip: [
-        '',
-        [
-          Validators.required,
-          Validators.maxLength(6),
-          Validators.minLength(6),
-          Validators.pattern('^[0-9]+$'),
-        ],
-      ],
+      country: ['', Validators.required]
     }),
     card: this.fb.group({
       number: [

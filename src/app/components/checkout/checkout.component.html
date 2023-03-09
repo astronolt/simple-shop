@@ -331,51 +331,6 @@
              </div>
            </div>
  
-           <div>
-             <label class="sr-only" for="PostalCode"> ZIP/Post Code </label>
- 
-             <input
-               type="text"
-               id="PostalCode"
-               placeholder="ZIP/Post Code"
-               [ngClass]="{
-                 'border-red-700':
-                   (checkoutForm['controls'].address.controls.zip.touched ||
-                     submitted) &&
-                   checkoutForm['controls'].address.controls.zip.invalid
-               }"
-               class="relative w-full border-gray-200 rounded-b-md focus:z-10 sm:text-sm"
-               formControlName="zip"
-             />
-             <div
-               *ngIf="
-                 (checkoutForm['controls'].address.controls.zip.touched ||
-                   submitted) &&
-                 checkoutForm['controls'].address.controls.zip.invalid
-               "
-             >
-               <p
-                 class="mt-2 text-xs text-red-600"
-                 *ngIf="checkoutForm['controls'].address.controls.zip.errors?.['required']"
-               >
-                 Required
-               </p>
-               <p
-                 class="mt-2 text-xs text-red-600"
-                 *ngIf="checkoutForm['controls'].address.controls.zip.errors?.['pattern']"
-               >
-                 Invalid zip
-               </p>
-               <p
-                 class="mt-2 text-xs text-red-600"
-                 *ngIf="checkoutForm['controls'].address.controls.zip.errors?.['maxlength']
-                 || checkoutForm['controls'].address.controls.zip.errors?.['minlength']
-                 "
-               >
-                 6 characters
-               </p>
-             </div>
-           </div>
          </div>
        </fieldset>
  
