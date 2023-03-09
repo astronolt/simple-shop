@@ -18,6 +18,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { OrderSuccessComponent } from './components/order-success/order-success.component';
 
 
 
@@ -33,7 +34,8 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     CheckoutComponent,
     NavComponent,
     ProductsPageComponent,
-    CartItemComponent
+    CartItemComponent,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,
