@@ -1,59 +1,112 @@
-<div>
-   <a
-     class="block relative h-72 rounded overflow-hidden"
-     routerLink="/products/{{ product.id }}"
-   >
-     <img
-       alt="{{ product.name }}"
-       class="object-cover object-center w-full h-full block"
-       src="{{ product.url }}"
-     />
-   </a>
-   <div class="mt-4">
-     <h2 class="text-gray-900 title-font text-lg font-medium">
-       {{ product.name }}
-     </h2>
-     <p class="mt-1">${{ product.price }}</p>
-   </div>
-   <div class="relative mt-4">
-     <div>
-       <label for="Quantity" class="sr-only"> Quantity </label>
- 
-       <div class="flex items-center justify-around gap-1">
-         <button
-           type="button"
-           (click)="decreaseQuantity()"
-           [disabled]="quantity === 1"
-           class="h-10 leading-10 text-gray-600 transition hover:opacity-75"
+<div *ngIf="product; else notFound">
+   <section class="text-gray-600 body-font overflow-hidden">
+     <div class="container px-5 py-24 mx-auto">
+       <div class="lg:w-4/5 mx-auto flex flex-wrap">
+         <a
+           class="inline-flex items-center md:mb-2 lg:mb-0"
+           routerLink="/products"
          >
-           &minus;
-         </button>
- 
-         <input
-           type="number"
-           id="Quantity"
-           [(ngModel)]="quantity"
-           min="1"
-           class="h-10 border-gray-200 rounded sm:text-sm text-center"
+           <svg
+             fill="none"
+             stroke="currentColor"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             stroke-width="2"
+             class="w-10 h-10 p-2 rounded-full"
+             viewBox="0 0 24 24"
+           >
+             <path d="M10 19l-7-7 7-7"></path>
+             <path d="M21 12H3"></path>
+           </svg>
+           <span class="ml text-lg">Back</span>
+         </a>
+       </div>
+       <div class="lg:w-4/5 mx-auto flex flex-wrap">
+         <img
+           alt="{{ product.name }}}"
+           class="lg:w-1/2 w-full lg:h-72 h-96 object-cover object-center rounded"
+           src="{{ product.url }}}"
          />
+         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+           <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
+             {{ product.name }}
+           </h1>
+           <p class="leading-relaxed">{{ product.description }}</p>
+           <div
+             class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5"
+           >
+             <div class="flex items-center">
+               <span class="mr-3">Quantity</span>
  
-         <button
-           type="button"
-           (click)="increaseQuantity()"
-           class="h-10 leading-10 text-gray-600 transition hover:opacity-75"
-         >
-           &plus;
-         </button>
+               <div>
+                 <label for="Quantity" class="sr-only"> Quantity </label>
+ 
+                 <div
+                   class="flex items-center border border-gray-200 divide-x divide-gray-200 rounded"
+                 >
+                   <button
+                     type="button"
+                     (click)="decreaseQuantity()"
+                     class="w-10 h-10 leading-10 text-gray-600 transition hover:opacity-75"
+                   >
+                     &minus;
+                   </button>
+ 
+                   <span>
+                     <input
+                       type="number"
+                       id="Quantity"
+                       [(ngModel)]="quantity"
+                       class="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
+                     />
+                   </span>
+ 
+                   <button
+                     type="button"
+                     (click)="increaseQuantity()"
+                     class="w-10 h-10 leading-10 text-gray-600 transition hover:opacity-75"
+                   >
+                     &plus;
+                   </button>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="flex">
+             <span class="title-font font-medium text-2xl text-gray-900"
+               >${{ product.price }}</span
+             >
+             <button
+               type="button"
+               (click)="addToCart()"
+               class="flex ml-auto text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 rounded"
+             >
+               Add to cart
+             </button>
+           </div>
+         </div>
+         <div> More Details </div>
        </div>
      </div>
- 
-     <button
-       type="button"
-       (click)="addToCart()"
-       class="flex w-full justify-center mx-auto mt-6 text-white bg-gray-800 border-0 py-2 px-8 focus:outline-none hover:bg-gray-700 rounded"
-     >
-       Add to Cart
-     </button>
-   </div>
+   </section>
  </div>
+ 
+ <ng-template #notFound>
+   <div class="grid h-[90vh] px-4 bg-white place-content-center text-center">
+     <div class="flex items-center justify-center flex-1">
+       <div class="max-w-xl px-4 py-8 mx-auto text-center">
+         <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+           Product not found
+         </h1>
+ 
+         <a
+           routerLink="/products"
+           class="inline-block px-5 py-3 mt-6 text-sm font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring"
+         >
+           Go Back Home
+         </a>
+       </div>
+     </div>
+   </div>
+ </ng-template>
  
