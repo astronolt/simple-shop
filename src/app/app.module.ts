@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ToastrModule } from 'ngx-toastr';
 
 import { HomeComponent } from './components/home/home.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -16,6 +17,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NavComponent } from './layout/nav/nav.component';
 import { ProductsPageComponent } from './components/products-page/products-page.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 
 
@@ -30,7 +32,8 @@ import { ProductsPageComponent } from './components/products-page/products-page.
     ProductDetailComponent,
     CheckoutComponent,
     NavComponent,
-    ProductsPageComponent
+    ProductsPageComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { ProductsPageComponent } from './components/products-page/products-page.
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
