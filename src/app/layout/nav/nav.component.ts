@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,11 +11,17 @@ export class NavComponent {
   numberOfItems: number = 0;
   isOpen: boolean = false;
 
-  constructor() {}
+  constructor(public cartService: CartService) {}
 
-  toggle() {
-    return (this.isOpen = !this.isOpen);
+  ngOnInit(): void {
+    this.cartService
+      .getItems()
+      .subscribe((items) => (this.numberOfItems = items.length));
   }
 
-  getItems():void {};
+  toggle = () => {
+    return (this.isOpen = !this.isOpen);
+  };
+
+  getItems = () => {};
 }
