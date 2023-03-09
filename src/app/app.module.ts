@@ -5,15 +5,19 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HomeComponent } from './components/home/home.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { NavComponent } from './layout/nav/nav.component';
+import { ProductsPageComponent } from './components/products-page/products-page.component';
+
+
 
 
 @NgModule({
@@ -21,10 +25,12 @@ import { NavComponent } from './layout/nav/nav.component';
     AppComponent,
     CartComponent,
     HomeComponent,
-    ProductDetailComponent,
     ProductListComponent,
+    ProductCardComponent,
+    ProductDetailComponent,
     CheckoutComponent,
-    NavComponent
+    NavComponent,
+    ProductsPageComponent
   ],
   imports: [
     BrowserModule,

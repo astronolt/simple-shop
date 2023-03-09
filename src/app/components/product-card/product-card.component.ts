@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  selector: 'app-product-card',
+  templateUrl: './product-card.component.html',
+  styleUrls: ['./product-card.component.css'],
 })
-export class ProductDetailComponent {
+export class ProductCardComponent {
   @Input() product!: Product;
 
   constructor(private cartService: CartService) {}
@@ -27,5 +27,4 @@ export class ProductDetailComponent {
   addToCart() {
     //this.cartService.addToCart(this.product, this.quantity);
   }
-
 }
