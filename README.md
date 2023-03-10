@@ -1,6 +1,21 @@
 # Mystore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+This project is a simple simulation of a shopping app using Angular CLI. This Single Page Application ( SPA ) adapts well to both mobile and larger screens.
+
+## Usage
+
+My store allows users to add items to their shopping cart from the home page ( Best Selling ) or from the main products page. The shopping cart can be modified by deleting an order or changing the order quantity before checking out and you will be shown a success page after completing the checkout form. Explore. Happy Shopping!
+
+
+
+## Technologies Used
+
+* Angular
+* TypeScript
+* Tailwind (styling)
+* localforage (local storage)
+* toastr (notifications)
+
 
 ## Development server
 
