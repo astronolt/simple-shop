@@ -10,10 +10,10 @@ My store allows users to add items to their shopping cart from the home page ( B
 
 * Angular
 * TypeScript
-* Tailwind (styling)
-* localforage (offline storage)
-* toastr (notifications)
-* cloudflare (serverless deployment)
+* Tailwind ( styling )
+* localforage ( offline storage )
+* toastr ( notifications )
+* cloudflare ( serverless deployment & CI/CD )
 
 
 ## Running the app
