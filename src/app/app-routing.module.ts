@@ -10,13 +10,14 @@ import { OrderSuccessComponent } from './components/order-success/order-success.
 
 const routes: Routes = [
   {
-    path: '/',
-    redirectTo: '',
+    path: '',
+    redirectTo: '/',
     pathMatch: 'full',
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
+    pathMatch: 'full',
   },
   {
     path: 'products',
