@@ -11,8 +11,10 @@ My store allows users to add items to their shopping cart from the home page ( B
 * Angular
 * TypeScript
 * Tailwind (styling)
-* localforage (local storage)
+* localforage (offline storage)
 * toastr (notifications)
+* cloudflare (serverless deployment)
+
 
 ## Running the app
 
@@ -20,8 +22,6 @@ My store allows users to add items to their shopping cart from the home page ( B
 2. Run `npm install` to install the dependencies
 3. Run `ng server --port 3000` to start the development server
 4. Navigate to `http://localhost:3000/`
-
-
 
 ## Contributing
 
